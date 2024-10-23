@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TiendaPage extends StatelessWidget {
-  // Lista de productos de ejemplo
   final List<Map<String, dynamic>> products = [
     {
       'name': 'Aceite de Oliva Virgen Extra',
@@ -26,8 +25,7 @@ class TiendaPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Tienda de Aceite'),
-        backgroundColor:
-            const Color.fromARGB(255, 190, 228, 164), // Verde oliva
+        backgroundColor: const Color.fromARGB(255, 190, 228, 164),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -68,7 +66,7 @@ class TiendaPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4.0),
                     child: Text(
-                      '€${product['price'].toString()}', // Ajuste para mostrar el símbolo del euro
+                      '€${product['price'].toString()}',
                       style: const TextStyle(
                         fontSize: 16,
                         color: Colors.green,

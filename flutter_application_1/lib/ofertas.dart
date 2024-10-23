@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class OfferPage extends StatelessWidget {
-  // Lista de anuncios de ejemplo
   final List<Map<String, dynamic>> announcements = [
     {
       'title': 'Nuevo Aceite de Oliva Virgen Extra',
@@ -28,8 +27,7 @@ class OfferPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tablón de Anuncios'),
-        backgroundColor:
-            const Color.fromARGB(255, 190, 228, 164), // Verde oliva
+        backgroundColor: const Color.fromARGB(255, 190, 228, 164),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

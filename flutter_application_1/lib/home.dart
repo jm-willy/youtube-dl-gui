@@ -8,8 +8,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bienvenido'),
-        backgroundColor:
-            const Color.fromARGB(255, 190, 228, 164), // Color del AppBar
+        backgroundColor: const Color.fromARGB(255, 190, 228, 164),
       ),
       body: Center(
         child: Padding(
@@ -27,17 +26,6 @@ class HomePage extends StatelessWidget {
                 'Aquí encontrarás la mejor selección de aceites de oliva.',
                 style: TextStyle(fontSize: 16),
                 textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 40),
-              ElevatedButton(
-                onPressed: () {
-                  // Aquí puedes agregar la lógica para navegar a otra página, si es necesario.
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(
-                      255, 190, 228, 164), // Color del botón
-                ),
-                child: const Text('Empezar'),
               ),
             ],
           ),

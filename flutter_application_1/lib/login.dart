@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'inicio.dart'; // Importamos la página principal desde home.dart
+import 'inicio.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -40,8 +40,8 @@ class _LoginScreenState extends State<LoginScreen> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              const Color(0xFFE2E6D6), // Verde oliva claro
-              const Color(0xFFC6D9B9), // Verde oliva medio
+              const Color(0xFFE2E6D6),
+              const Color(0xFFC6D9B9),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         // Logo o imagen de la cooperativa
                         Image.asset(
-                          '../assets/logo.png', // Asegúrate de tener un logo en esta ruta
+                          '../assets/logo.png',
                           height: 100,
                         ),
                         const SizedBox(
@@ -132,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         // Botón para iniciar sesión
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black, // Color negro
+                            backgroundColor: Colors.black,
                             padding: const EdgeInsets.symmetric(
                                 vertical: 18, horizontal: 30), // Mayor padding
                             shape: RoundedRectangleBorder(
@@ -144,9 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           onPressed: _login,
                           child: const Text(
                             'Iniciar Sesión',
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.white), // Texto en blanco
+                            style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
                         ),
                       ],

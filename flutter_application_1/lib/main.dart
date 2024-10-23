@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login.dart'; // Importamos el archivo login.dart
+import 'login.dart';
 
 void main() {
   runApp(const MaterialApp(
