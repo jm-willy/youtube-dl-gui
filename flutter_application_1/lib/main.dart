@@ -10,8 +10,6 @@ void main() {
   ));
 }
 
-bool userLogged = true;
-
 class App extends StatelessWidget {
   const App({super.key});
 

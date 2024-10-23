@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'inicio.dart';
-import 'main.dart';
+
+bool userLogged = true;
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
