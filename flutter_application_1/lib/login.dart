@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart'; // Importamos la página principal desde home.dart
+import 'inicio.dart'; // Importamos la página principal desde home.dart
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
