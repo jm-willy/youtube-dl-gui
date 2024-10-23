@@ -45,6 +45,17 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           title: const Text(''),
           automaticallyImplyLeading: false,
           actions: [
+            // Icono de perfil en lugar del menú hamburguesa
+            IconButton(
+              icon: const Icon(Icons.person, color: Colors.white),
+              onPressed: () {
+                // Navegar a la página de perfil cuando se presione el icono
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PerfilPage()),
+                );
+              },
+            ),
             IconButton(
               icon: const Icon(Icons.logout, color: Colors.white),
               onPressed: () {
