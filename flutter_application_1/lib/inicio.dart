@@ -39,8 +39,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async => false,
+    return PopScope(
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 190, 228, 164),
