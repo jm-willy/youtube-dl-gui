@@ -1,24 +1,34 @@
 import 'package:flutter/material.dart';
+
+import 'inicio.dart';
 import 'login.dart';
 
 void main() {
   runApp(const MaterialApp(
     title: 'cooperativa',
-    home: FirstRoute(), // Primera pantalla es la de Login
+    home: App(), // Primera pantalla es la de Login
   ));
 }
 
-// Primera ruta con el formulario de login
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({super.key});
+bool userLogged = true;
+
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login Page'),
-      ),
-      body: LoginScreen(), // Cargamos la pantalla de login desde login.dart
+    Widget openingPage = const LoginScreen();
+    if (userLogged) {
+      openingPage = const MyHomePage();
+    }
+
+    return MaterialApp(
+      title: 'Cooperativa',
+      debugShowCheckedModeBanner: false,
+      home: openingPage,
+      theme: ThemeData(
+          useMaterial3: true,
+          colorSchemeSeed: const Color.fromARGB(222, 0, 133, 0)),
     );
   }
 }
