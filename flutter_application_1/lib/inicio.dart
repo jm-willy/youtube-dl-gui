@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 import 'package:motion_tab_bar/MotionTabBarController.dart';
+import 'home.dart';
+import 'login.dart';
 import 'ofertas.dart';
 import 'perfil.dart';
+import 'recibos.dart';
 import 'tienda.dart';
-import 'home.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, this.title}) : super(key: key);
@@ -36,12 +38,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async => false,
+    return PopScope(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 150, 200, 130),
-          title: const Text(''),
+          backgroundColor: const Color.fromARGB(255, 190, 228, 164),
+          title: const Text('Cooperativa San Amador'),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
@@ -49,7 +50,18 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const PerfilPage()),
+                  MaterialPageRoute(builder: (context) => PerfilPage()),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.logout, color: Colors.white),
+              onPressed: () {
+                userLogged = false;
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  (Route<dynamic> route) => false,
                 );
               },
             ),
@@ -59,11 +71,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           controller: _motionTabBarController,
           initialSelectedTab: "Home",
           useSafeArea: true,
-          labels: const ["Home", "Ofertas", "Tienda"],
+          labels: const ["Home", "Ofertas", "Tienda", "Recibos"],
           icons: const [
             Icons.home,
             Icons.local_offer,
             Icons.store,
+            Icons.receipt,
           ],
           tabSize: 50,
           tabBarHeight: 55,
@@ -91,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             HomePage(),
             OfferPage(),
             TiendaPage(),
+            ReceiptPage(),
           ],
         ),
       ),

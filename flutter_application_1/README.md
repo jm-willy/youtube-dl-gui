@@ -1,16 +1,17 @@
-# flutter_application_1
+# App para cooperative de aceite de oliva
 
-A new Flutter project.
+- Cada funcionalidad tendra su propio archivo .dart dentro de lib/
+- Cread ramas sin miedo para subir codigo de prueba, pero recordad de hacer el push desde una rama que no sea "master" y tampoco hacerlos a "master"
+- Tiene que ser responsive(escritorio y web)
 
-## Getting Started
+## Instalar proyecto
+1. git clone
+2. flutter pub get
+3. cambiar el valor de `bool userLogged = true;` para ver el loggin o la app
 
-This project is a starting point for a Flutter application.
+## Comandos
+- [Comandos de flutter](https://docs.flutter.dev/reference/flutter-cli)
+- [Comandos de git](https://github.com/jm-willy/guia_git)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Iconos
+[Iconos de flutter](https://fonts.google.com/icons)

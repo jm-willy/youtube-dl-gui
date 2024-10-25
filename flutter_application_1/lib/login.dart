@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'inicio.dart';
+
+bool userLogged = true;
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -22,6 +25,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _login() {
     if (_formKey.currentState!.validate()) {
+      userLogged = true;
+      // Navegamos a MyHomePage cuando el login es exitoso
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
