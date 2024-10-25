@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 import 'package:motion_tab_bar/MotionTabBarController.dart';
 import 'home.dart';
-import 'login.dart';
 import 'ofertas.dart';
 import 'perfil.dart';
 import 'recibos.dart';
@@ -25,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     super.initState();
     _motionTabBarController = MotionTabBarController(
       initialIndex: 0, // índice inicial a 0 para que abra Home primero
-      length: 3,
+      length: 4,
       vsync: this,
     );
   }
@@ -51,17 +50,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => PerfilPage()),
-                );
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.logout, color: Colors.white),
-              onPressed: () {
-                userLogged = false;
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
-                  (Route<dynamic> route) => false,
                 );
               },
             ),
