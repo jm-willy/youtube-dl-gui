@@ -25,7 +25,7 @@ class TiendaPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Tienda de Aceite'),
-        backgroundColor: const Color.fromARGB(255, 190, 228, 164),
+        backgroundColor: const Color.fromARGB(255, 150, 200, 130),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -66,7 +66,7 @@ class TiendaPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4.0),
                     child: Text(
-                      '€${product['price'].toString()}',
+                      '${product['price'].toString()}€',
                       style: const TextStyle(
                         fontSize: 16,
                         color: Colors.green,
@@ -76,7 +76,7 @@ class TiendaPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 190, 228, 164),
+                      backgroundColor: const Color.fromARGB(255, 150, 200, 130),
                     ),
                     onPressed: () {
                       // Lógica para agregar al carrito

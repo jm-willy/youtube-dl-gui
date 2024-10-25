@@ -20,10 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  // Simula el proceso de login
   void _login() {
     if (_formKey.currentState!.validate()) {
-      // Navegamos a MyHomePage cuando el login es exitoso
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -48,44 +46,37 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(24.0), // Espaciado más amplio
+          padding: const EdgeInsets.all(24.0),
           child: Center(
             child: Card(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12), // Bordes redondeados
+                borderRadius: BorderRadius.circular(12),
               ),
-              elevation: 4, // Sombra para darle profundidad
+              elevation: 4,
               child: Padding(
-                padding:
-                    const EdgeInsets.all(24.0), // Espaciado interno de la Card
+                padding: const EdgeInsets.all(24.0),
                 child: Form(
                   key: _formKey,
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Logo o imagen de la cooperativa
                         Image.asset(
                           '../assets/logo.png',
                           height: 100,
                         ),
-                        const SizedBox(
-                            height: 20), // Espaciado entre el logo y los campos
-
-                        // Campo para el email
+                        const SizedBox(height: 20),
                         TextFormField(
                           controller: _emailController,
                           decoration: InputDecoration(
                             labelText: 'Email',
                             labelStyle: const TextStyle(color: Colors.grey),
                             border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.circular(8), // Bordes más suaves
+                              borderRadius: BorderRadius.circular(8),
                               borderSide: const BorderSide(color: Colors.grey),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.circular(8), // Bordes más suaves
+                              borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(color: Colors.green[500]!),
                             ),
                           ),
@@ -100,22 +91,18 @@ class _LoginScreenState extends State<LoginScreen> {
                             return null;
                           },
                         ),
-                        const SizedBox(height: 20), // Espaciado entre campos
-
-                        // Campo para la contraseña
+                        const SizedBox(height: 20),
                         TextFormField(
                           controller: _passwordController,
                           decoration: InputDecoration(
                             labelText: 'Contraseña',
                             labelStyle: const TextStyle(color: Colors.grey),
                             border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.circular(8), // Bordes más suaves
+                              borderRadius: BorderRadius.circular(8),
                               borderSide: const BorderSide(color: Colors.grey),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.circular(8), // Bordes más suaves
+                              borderRadius: BorderRadius.circular(8),
                               borderSide: BorderSide(color: Colors.green[500]!),
                             ),
                           ),
@@ -127,19 +114,16 @@ class _LoginScreenState extends State<LoginScreen> {
                             return null;
                           },
                         ),
-                        const SizedBox(height: 30), // Espaciado entre campos
-
-                        // Botón para iniciar sesión
+                        const SizedBox(height: 30),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
                             padding: const EdgeInsets.symmetric(
-                                vertical: 18, horizontal: 30), // Mayor padding
+                                vertical: 18, horizontal: 30),
                             shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(8), // Bordes más suaves
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                            elevation: 0, // Sin sombra para un look más limpio
+                            elevation: 0,
                           ),
                           onPressed: _login,
                           child: const Text(

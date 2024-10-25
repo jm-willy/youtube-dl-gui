@@ -27,7 +27,7 @@ class OfferPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Tablón de Anuncios'),
-        backgroundColor: const Color.fromARGB(255, 190, 228, 164),
+        backgroundColor: const Color.fromARGB(255, 150, 200, 130),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

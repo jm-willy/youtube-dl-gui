@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 import 'package:motion_tab_bar/MotionTabBarController.dart';
-import 'login.dart';
 import 'ofertas.dart';
-import 'tienda.dart';
 import 'perfil.dart';
+import 'tienda.dart';
 import 'home.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -24,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     super.initState();
     _motionTabBarController = MotionTabBarController(
       initialIndex: 0, // índice inicial a 0 para que abra Home primero
-      length: 4,
+      length: 3,
       vsync: this,
     );
   }
@@ -41,28 +40,16 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       onWillPop: () async => false,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 190, 228, 164),
+          backgroundColor: const Color.fromARGB(255, 150, 200, 130),
           title: const Text(''),
           automaticallyImplyLeading: false,
           actions: [
-            // Icono de perfil en lugar del menú hamburguesa
             IconButton(
               icon: const Icon(Icons.person, color: Colors.white),
               onPressed: () {
-                // Navegar a la página de perfil cuando se presione el icono
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PerfilPage()),
-                );
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.logout, color: Colors.white),
-              onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
-                  (Route<dynamic> route) => false,
+                  MaterialPageRoute(builder: (context) => const PerfilPage()),
                 );
               },
             ),
@@ -72,12 +59,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           controller: _motionTabBarController,
           initialSelectedTab: "Home",
           useSafeArea: true,
-          labels: const ["Home", "Ofertas", "Tienda", "Perfil"],
+          labels: const ["Home", "Ofertas", "Tienda"],
           icons: const [
             Icons.home,
             Icons.local_offer,
             Icons.store,
-            Icons.person,
           ],
           tabSize: 50,
           tabBarHeight: 55,
@@ -89,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           tabIconColor: Colors.grey,
           tabIconSize: 28.0,
           tabIconSelectedSize: 26.0,
-          tabSelectedColor: const Color.fromARGB(255, 190, 228, 164),
+          tabSelectedColor: const Color.fromARGB(255, 150, 200, 130),
           tabIconSelectedColor: Colors.white,
           tabBarColor: Colors.white,
           onTabItemSelected: (int value) {
@@ -105,7 +91,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             HomePage(),
             OfferPage(),
             TiendaPage(),
-            PerfilPage(),
           ],
         ),
       ),
