@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // TO DO:
-// Numeracion relativa al total, abrir desde temporadas, quitar barra de pagina, añadir anuncios boton flotante
+// Numeracion relativa al total, abrir desde temporadas, añadir anuncios boton flotante
 
 class ReceiptPage extends StatelessWidget {
   final List<Map<String, dynamic>> receipts = [
@@ -29,6 +29,18 @@ class ReceiptPage extends StatelessWidget {
       'acidez': '0.50',
       'calidad': 'extra',
     },
+    {
+      'albaran': '3',
+      'socio': '1987',
+      'date': '20/10/2024',
+      'poligono': '7',
+      'parcela': '23',
+      'neto': '701',
+      'rendto': '12',
+      'humedad': '0.00',
+      'acidez': '0.00',
+      'calidad': 'verde',
+    },
   ];
 
   static const Widget dividerBar = Divider(
@@ -43,19 +55,21 @@ class ReceiptPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(28.0),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 28),
         child: ListView.builder(
           itemCount: receipts.length,
           itemBuilder: (context, index) {
             final receipt = receipts[index];
             return Card(
+              shadowColor: Color.fromARGB(255, 0, 0, 0),
               elevation: 8,
               margin: const EdgeInsets.symmetric(vertical: 12),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(28.0),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 12, horizontal: 30),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -90,7 +104,7 @@ class ReceiptPage extends StatelessWidget {
 
   Widget _buildRow(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 3.0),
+      padding: const EdgeInsets.symmetric(vertical: 3.0, horizontal: 1.2),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
