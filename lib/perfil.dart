@@ -9,7 +9,7 @@ class PerfilPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Perfil de Usuario'),
-        backgroundColor: const Color.fromARGB(255, 150, 200, 130),
+        backgroundColor: const Color.fromARGB(255, 190, 228, 164),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

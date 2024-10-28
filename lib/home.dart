@@ -13,10 +13,6 @@ class HomePage extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Temporadas de Aceite'),
-        backgroundColor: const Color.fromARGB(255, 150, 200, 130),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

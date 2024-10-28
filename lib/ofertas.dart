@@ -25,10 +25,6 @@ class OfferPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Tablón de Anuncios'),
-        backgroundColor: const Color.fromARGB(255, 150, 200, 130),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(

@@ -1,9 +1,5 @@
 # App para cooperative de aceite de oliva
 
-- Cada funcionalidad tendra su propio archivo .dart dentro de lib/
-- Cread ramas sin miedo para subir codigo de prueba, pero recordad de hacer el push desde una rama que no sea "master" y tampoco hacerlos a "master"
-- Tiene que ser responsive(escritorio y web)
-
 ## Instalar proyecto
 1. git clone
 2. flutter pub get

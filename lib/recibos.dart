@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-// Albaranes todo ancho, numeracion relativa al total, desde temporadas, quitar barra de pagina, añadir anuncios boton flotante
+// TO DO:
+// Numeracion relativa al total, abrir desde temporadas, quitar barra de pagina, añadir anuncios boton flotante
 
 class ReceiptPage extends StatelessWidget {
   final List<Map<String, dynamic>> receipts = [
@@ -29,7 +30,8 @@ class ReceiptPage extends StatelessWidget {
       'calidad': 'extra',
     },
   ];
-  Widget dividerBar = const Divider(
+
+  static const Widget dividerBar = Divider(
     height: 1,
     thickness: 2,
     indent: 0,
@@ -40,10 +42,6 @@ class ReceiptPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Recibos y Albaranes'),
-        backgroundColor: const Color.fromARGB(255, 150, 200, 130),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: ListView.builder(

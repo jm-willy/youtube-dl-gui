@@ -23,10 +23,6 @@ class TiendaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Tienda de Aceite'),
-        backgroundColor: const Color.fromARGB(255, 150, 200, 130),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
