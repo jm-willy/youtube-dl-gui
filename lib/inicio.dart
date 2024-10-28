@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/colores.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 import 'package:motion_tab_bar/MotionTabBarController.dart';
 
@@ -74,12 +75,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
             color: Colors.black,
             fontWeight: FontWeight.w500,
           ),
-          tabIconColor: Colors.grey,
+          tabIconColor: Color.fromARGB(255, 158, 174, 158),
           tabIconSize: 28.0,
           tabIconSelectedSize: 26.0,
-          tabSelectedColor: const Color.fromARGB(255, 150, 200, 130),
-          tabIconSelectedColor: Colors.white,
-          tabBarColor: Colors.white,
+          tabSelectedColor: appButtonColor,
+          tabIconSelectedColor: const Color.fromARGB(255, 255, 255, 255),
+          tabBarColor: const Color.fromARGB(255, 253, 255, 251),
           onTabItemSelected: (int value) {
             setState(() {
               _motionTabBarController!.index = value;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'colores.dart';
+
 class TiendaPage extends StatelessWidget {
   final List<Map<String, dynamic>> products = [
     {
@@ -36,6 +38,7 @@ class TiendaPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final product = products[index];
             return Card(
+              color: appContainerColor,
               elevation: 5,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -72,8 +75,7 @@ class TiendaPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 150, 200, 130),
-                    ),
+                        backgroundColor: appButtonColor),
                     onPressed: () {
                       // Lógica para agregar al carrito
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -83,7 +85,8 @@ class TiendaPage extends StatelessWidget {
                         ),
                       );
                     },
-                    child: const Text('Añadir al carrito'),
+                    child: const Text('Añadir al carrito',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'colores.dart';
+
 class OfferPage extends StatelessWidget {
   final List<Map<String, dynamic>> announcements = [
     {
@@ -32,6 +34,7 @@ class OfferPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final announcement = announcements[index];
             return Card(
+              color: appContainerColor,
               elevation: 5,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'colores.dart';
 
 // TO DO:
 // Numeracion relativa al total, abrir desde temporadas, añadir anuncios boton flotante
@@ -55,44 +56,48 @@ class ReceiptPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 28),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 2),
         child: ListView.builder(
           itemCount: receipts.length,
           itemBuilder: (context, index) {
             final receipt = receipts[index];
-            return Card(
-              shadowColor: Color.fromARGB(255, 0, 0, 0),
-              elevation: 8,
-              margin: const EdgeInsets.symmetric(vertical: 12),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildRow('Albarán:', receipt['albaran']),
-                    dividerBar,
-                    _buildRow('Socio:', receipt['socio']),
-                    dividerBar,
-                    _buildRow('Fecha:', receipt['date']),
-                    dividerBar,
-                    _buildRow('Polígono:', receipt['poligono']),
-                    dividerBar,
-                    _buildRow('Parcela:', receipt['parcela']),
-                    dividerBar,
-                    _buildRow('Neto (kg):', receipt['neto']),
-                    dividerBar,
-                    _buildRow('Rendimiento (%):', receipt['rendto']),
-                    dividerBar,
-                    _buildRow('Humedad (%):', receipt['humedad']),
-                    dividerBar,
-                    _buildRow('Acidez (%):', receipt['acidez']),
-                    dividerBar,
-                    _buildRow('Calidad:', receipt['calidad']),
-                  ],
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 26),
+              child: Card(
+                color: appContainerColor,
+                shadowColor: const Color.fromARGB(255, 0, 0, 0),
+                elevation: 8,
+                margin: const EdgeInsets.symmetric(vertical: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _buildRow('Albarán:', receipt['albaran']),
+                      dividerBar,
+                      _buildRow('Socio:', receipt['socio']),
+                      dividerBar,
+                      _buildRow('Fecha:', receipt['date']),
+                      dividerBar,
+                      _buildRow('Polígono:', receipt['poligono']),
+                      dividerBar,
+                      _buildRow('Parcela:', receipt['parcela']),
+                      dividerBar,
+                      _buildRow('Neto (kg):', receipt['neto']),
+                      dividerBar,
+                      _buildRow('Rendimiento (%):', receipt['rendto']),
+                      dividerBar,
+                      _buildRow('Humedad (%):', receipt['humedad']),
+                      dividerBar,
+                      _buildRow('Acidez (%):', receipt['acidez']),
+                      dividerBar,
+                      _buildRow('Calidad:', receipt['calidad']),
+                    ],
+                  ),
                 ),
               ),
             );
@@ -104,7 +109,7 @@ class ReceiptPage extends StatelessWidget {
 
   Widget _buildRow(String label, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 3.0, horizontal: 1.2),
+      padding: const EdgeInsets.symmetric(vertical: 3.0, horizontal: 1.1),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
