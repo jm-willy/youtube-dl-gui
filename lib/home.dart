@@ -20,8 +20,8 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Text(
-              'Seleccione una temporada para ingresar datos:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              'Seleccione una temporada para ver datos:',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),

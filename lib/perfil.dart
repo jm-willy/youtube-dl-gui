@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'colores.dart';
 import 'login.dart';
 
 class PerfilPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class PerfilPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Perfil de Usuario'),
-        backgroundColor: const Color.fromARGB(255, 190, 228, 164),
+        backgroundColor: appTopBarColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -23,6 +24,7 @@ class PerfilPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Card(
+              color: appContainerColor,
               elevation: 4,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
@@ -67,7 +69,7 @@ class PerfilPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 150, 200, 130),
+                    backgroundColor: appButtonColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -99,7 +101,7 @@ class PerfilPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: const Color.fromARGB(255, 244, 67, 54),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),

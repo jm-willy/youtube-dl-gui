@@ -43,7 +43,10 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 190, 228, 164),
-          title: const Text('Cooperativa San Amador'),
+          title: const Text(
+            'Cooperativa San Amador',
+            style: TextStyle(fontWeight: FontWeight.w500),
+          ),
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
@@ -71,16 +74,17 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           tabSize: 50,
           tabBarHeight: 55,
           textStyle: const TextStyle(
-            fontSize: 12,
-            color: Colors.black,
+            fontSize: 12.5,
+            color: Color.fromARGB(255, 251, 255, 254), // antes negro
             fontWeight: FontWeight.w500,
           ),
-          tabIconColor: Color.fromARGB(255, 158, 174, 158),
+          // antes gris: Color.fromARGB(255, 158, 174, 158)
+          tabIconColor: Color.fromARGB(255, 210, 232, 210),
           tabIconSize: 28.0,
           tabIconSelectedSize: 26.0,
           tabSelectedColor: appButtonColor,
-          tabIconSelectedColor: const Color.fromARGB(255, 255, 255, 255),
-          tabBarColor: const Color.fromARGB(255, 253, 255, 251),
+          tabIconSelectedColor: const Color.fromARGB(255, 251, 255, 254),
+          tabBarColor: const Color.fromARGB(255, 88, 128, 88), //antes blanco
           onTabItemSelected: (int value) {
             setState(() {
               _motionTabBarController!.index = value;

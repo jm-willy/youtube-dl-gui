@@ -67,7 +67,7 @@ class TiendaPage extends StatelessWidget {
                     child: Text(
                       '${product['price'].toString()}€',
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: 17,
                         color: Colors.green,
                         fontWeight: FontWeight.bold,
                       ),
@@ -80,13 +80,15 @@ class TiendaPage extends StatelessWidget {
                       // Lógica para agregar al carrito
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
-                          content:
-                              Text('${product['name']} añadido al carrito'),
+                          content: Text(
+                            '${product['name']} añadido al carrito',
+                            style: TextStyle(fontWeight: FontWeight.w900),
+                          ),
                         ),
                       );
                     },
                     child: const Text('Añadir al carrito',
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                        style: TextStyle(fontWeight: FontWeight.w900)),
                   ),
                 ],
               ),
