@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     return PopScope(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 190, 228, 164),
+          backgroundColor: appTopBarColor,
           title: const Text(
             'Cooperativa San Amador',
             style: TextStyle(fontWeight: FontWeight.w500),
@@ -74,9 +74,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           tabSize: 50,
           tabBarHeight: 55,
           textStyle: const TextStyle(
-            fontSize: 12.5,
+            fontSize: 14.5,
             color: Color.fromARGB(255, 251, 255, 254), // antes negro
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w800,
           ),
           // antes gris: Color.fromARGB(255, 158, 174, 158)
           tabIconColor: Color.fromARGB(255, 210, 232, 210),
