@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// Albaranes todo ancho, numeracion relativa al total, desde temporadas, quitar barra de pagina, añadir anuncios boton flotante
+
 class ReceiptPage extends StatelessWidget {
   final List<Map<String, dynamic>> receipts = [
     {
@@ -26,215 +28,80 @@ class ReceiptPage extends StatelessWidget {
       'acidez': '0.50',
       'calidad': 'extra',
     },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
-    {
-      'albaran': '30',
-      'socio': '2456',
-      'date': '21/10/2024',
-      'poligono': '8',
-      'parcela': '32',
-      'neto': '890',
-      'rendto': '10',
-      'humedad': '1.00',
-      'acidez': '0.50',
-      'calidad': 'extra',
-    },
   ];
+  Widget dividerBar = const Divider(
+    height: 1,
+    thickness: 2,
+    indent: 0,
+    endIndent: 0,
+    color: Color.fromARGB(255, 0, 0, 0),
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Recibos y Albaranes'),
-        backgroundColor: const Color.fromARGB(255, 190, 228, 164),
+        backgroundColor: const Color.fromARGB(255, 150, 200, 130),
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(9.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 249, 255, 245),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color.fromARGB(110, 78, 81, 75),
-                  spreadRadius: 3,
-                  blurRadius: 6,
-                  offset: Offset(1, 2), // Cambia posicion de la sombra
-                ),
-              ],
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.vertical, // Habilita scroll vertical
-                child: SingleChildScrollView(
-                  scrollDirection:
-                      Axis.horizontal, // Habilita scroll horizontal
-                  child: DataTable(
-                    columns: const [
-                      DataColumn(label: Text('Albarán')),
-                      DataColumn(label: Text('Socio')),
-                      DataColumn(label: Text('Fecha')),
-                      DataColumn(label: Text('Polígono')),
-                      DataColumn(label: Text('Parcela')),
-                      DataColumn(label: Text('Neto (kg)')),
-                      DataColumn(label: Text('Rendimiento (%)')),
-                      DataColumn(label: Text('Humedad (%)')),
-                      DataColumn(label: Text('Acidez (%)')),
-                      DataColumn(label: Text('Calidad')),
-                    ],
-                    rows: receipts.map((receipt) {
-                      return DataRow(cells: [
-                        DataCell(Text(receipt['albaran'])),
-                        DataCell(Text(receipt['socio'])),
-                        DataCell(Text(receipt['date'])),
-                        DataCell(Text(receipt['poligono'])),
-                        DataCell(Text(receipt['parcela'])),
-                        DataCell(Text(receipt['neto'])),
-                        DataCell(Text(receipt['rendto'])),
-                        DataCell(Text(receipt['humedad'])),
-                        DataCell(Text(receipt['acidez'])),
-                        DataCell(Text(receipt['calidad'])),
-                      ]);
-                    }).toList(),
-                  ),
+      body: Padding(
+        padding: const EdgeInsets.all(28.0),
+        child: ListView.builder(
+          itemCount: receipts.length,
+          itemBuilder: (context, index) {
+            final receipt = receipts[index];
+            return Card(
+              elevation: 8,
+              margin: const EdgeInsets.symmetric(vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildRow('Albarán:', receipt['albaran']),
+                    dividerBar,
+                    _buildRow('Socio:', receipt['socio']),
+                    dividerBar,
+                    _buildRow('Fecha:', receipt['date']),
+                    dividerBar,
+                    _buildRow('Polígono:', receipt['poligono']),
+                    dividerBar,
+                    _buildRow('Parcela:', receipt['parcela']),
+                    dividerBar,
+                    _buildRow('Neto (kg):', receipt['neto']),
+                    dividerBar,
+                    _buildRow('Rendimiento (%):', receipt['rendto']),
+                    dividerBar,
+                    _buildRow('Humedad (%):', receipt['humedad']),
+                    dividerBar,
+                    _buildRow('Acidez (%):', receipt['acidez']),
+                    dividerBar,
+                    _buildRow('Calidad:', receipt['calidad']),
+                  ],
                 ),
               ),
-            ),
-          ),
+            );
+          },
         ),
+      ),
+    );
+  }
+
+  Widget _buildRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Text(value),
+        ],
       ),
     );
   }
