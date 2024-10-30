@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Colores comunes a varios archivos o elementos
 const myContainerColor = Color.fromARGB(250, 236, 253, 240);
 const myButtonColor = Color.fromARGB(255, 150, 205, 130);
 const myTopBarColor = Color.fromARGB(255, 190, 228, 164);

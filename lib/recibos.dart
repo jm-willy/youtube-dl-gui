@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'colores.dart';
 
 // TO DO:
-// Numeracion relativa al total, abrir desde temporadas, añadir anuncios boton flotante
+// Numeracion relativa al total
 
 class ReceiptPage extends StatelessWidget {
   final List<Map<String, dynamic>> receipts = [

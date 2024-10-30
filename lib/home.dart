@@ -32,36 +32,44 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      elevation: 4,
-                      padding: const EdgeInsets.symmetric(vertical: 20),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      backgroundColor: myButtonColor),
+                    elevation: 4,
+                    padding: const EdgeInsets.symmetric(vertical: 22),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    backgroundColor: myButtonColor,
+                  ),
                   onPressed: () {
                     showDialog(
-                      barrierColor: Color.fromARGB(133, 0, 11, 0),
                       context: context,
+                      barrierColor: Color.fromARGB(133, 0, 11, 0),
                       builder: (BuildContext context) {
-                        return AlertDialog(
-                          backgroundColor: myScaffoldColor,
-                          insetPadding:
-                              EdgeInsets.symmetric(vertical: 16, horizontal: 0),
-                          title: Text('Datos de $temporada'),
-                          content: ReceiptPage(),
-                          elevation: 5,
-                          actions: [
-                            TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: const Text('Cerrar',
-                                  style: TextStyle(
-                                    fontSize: 19.5,
-                                    fontWeight: FontWeight.w500,
-                                  )),
+                        return Dialog(
+                          backgroundColor: Colors.transparent,
+                          insetPadding: EdgeInsets.zero,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.94,
+                              height: MediaQuery.of(context).size.height * 0.94,
+                              child: Scaffold(
+                                backgroundColor: myScaffoldColor,
+                                appBar: AppBar(
+                                  backgroundColor: myButtonColor,
+                                  title: Text('Datos de $temporada'),
+                                  actions: [
+                                    IconButton(
+                                      icon: const Icon(Icons.close),
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                body: ReceiptPage(),
+                              ),
                             ),
-                          ],
+                          ),
                         );
                       },
                     );
@@ -86,57 +94,6 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildDataEntryCards() {
-    final List<String> fields = [
-      'Albarán',
-      'Socio',
-      'Término',
-      'Polígono',
-      'Parcela',
-      'Paraje',
-      'Neto',
-      'Rendto',
-      'Humedad',
-      'Acidez',
-      'Calidad',
-    ];
-
-    return Column(
-      children: fields.map((field) {
-        return Card(
-          elevation: 3,
-          margin: const EdgeInsets.symmetric(vertical: 8.0),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  field,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 8),
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: 'Ingrese $field',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 10),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      }).toList(),
     );
   }
 }
