@@ -1,32 +1,92 @@
 import 'package:flutter/material.dart';
-
 import 'colores.dart';
 
-class OfferPage extends StatelessWidget {
+class OfferPage extends StatefulWidget {
+  @override
+  _OfferPageState createState() => _OfferPageState();
+}
+
+class _OfferPageState extends State<OfferPage> {
   final List<Map<String, dynamic>> announcements = [
-    {
-      'title': 'Nuevo Aceite de Oliva Virgen Extra',
-      'description':
-          'Estamos emocionados de anunciar la llegada de nuestro nuevo aceite de oliva virgen extra, cultivado de manera sostenible.',
-      'date': '20/10/2024',
-    },
     {
       'title': 'Participación en la Feria Local',
       'description':
           'Visítanos en la feria local este fin de semana y descubre nuestros productos.',
       'date': '18/10/2024',
     },
-    {
-      'title': 'Descuento Especial para Miembros',
-      'description':
-          'Todos los miembros de la cooperativa reciben un 10% de descuento en su próxima compra.',
-      'date': '15/10/2024',
-    },
   ];
+
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
+
+  void _showForm() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+            left: 16,
+            right: 16,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(height: 20),
+              TextField(
+                controller: titleController,
+                decoration: const InputDecoration(
+                  labelText: 'Título',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: descriptionController,
+                decoration: const InputDecoration(
+                  labelText: 'Descripción',
+                  border: OutlineInputBorder(),
+                ),
+                maxLines: 3,
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  _addAnnouncement();
+                  Navigator.pop(context);
+                },
+                child: const Text('Enviar'),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _addAnnouncement() {
+    final newAnnouncement = {
+      'title': titleController.text,
+      'description': descriptionController.text,
+      'date': DateTime.now().toString().substring(0, 10),
+    };
+
+    setState(() {
+      announcements.insert(0, newAnnouncement);
+    });
+
+    titleController.clear();
+    descriptionController.clear();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Ofertas'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(
@@ -70,6 +130,15 @@ class OfferPage extends StatelessWidget {
               ),
             );
           },
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _showForm,
+        backgroundColor: myButtonColor,
+        foregroundColor: Colors.white,
+        child: const Icon(
+          Icons.edit_note,
+          size: 40,
         ),
       ),
     );
