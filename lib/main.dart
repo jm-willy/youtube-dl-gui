@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'inicio.dart';
 import 'login.dart';
+import 'colores.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -27,7 +28,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: const Color.fromARGB(222, 16, 96, 0),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 250, 255, 242),
+        scaffoldBackgroundColor: myScaffoldColor,
         // primaryColorDark: const Color.fromARGB(255, 88, 96, 88),
         // primaryColorLight: const Color.fromARGB(250, 250, 255, 245),
       ),

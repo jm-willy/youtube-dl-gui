@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/colores.dart';
 
+import 'recibos.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -15,13 +17,13 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(6.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const Text(
               'Seleccione una temporada para ver datos:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+              style: TextStyle(fontSize: 23, fontWeight: FontWeight.w900),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
@@ -31,26 +33,33 @@ class HomePage extends StatelessWidget {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       elevation: 4,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 20),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      backgroundColor: appButtonColor),
+                      backgroundColor: myButtonColor),
                   onPressed: () {
                     showDialog(
+                      barrierColor: Color.fromARGB(133, 0, 11, 0),
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
+                          backgroundColor: myScaffoldColor,
+                          insetPadding:
+                              EdgeInsets.symmetric(vertical: 16, horizontal: 0),
                           title: Text('Datos de $temporada'),
-                          content: SingleChildScrollView(
-                            child: _buildDataEntryCards(),
-                          ),
+                          content: ReceiptPage(),
+                          elevation: 5,
                           actions: [
                             TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: const Text('Cerrar'),
+                              child: const Text('Cerrar',
+                                  style: TextStyle(
+                                    fontSize: 19.5,
+                                    fontWeight: FontWeight.w500,
+                                  )),
                             ),
                           ],
                         );

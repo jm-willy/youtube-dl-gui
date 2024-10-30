@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'colores.dart';
 
 // TO DO:
@@ -64,7 +65,7 @@ class ReceiptPage extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 26),
               child: Card(
-                color: appContainerColor,
+                color: myContainerColor,
                 shadowColor: const Color.fromARGB(255, 0, 0, 0),
                 elevation: 8,
                 margin: const EdgeInsets.symmetric(vertical: 12),

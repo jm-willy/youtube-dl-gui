@@ -34,7 +34,7 @@ class OfferPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final announcement = announcements[index];
             return Card(
-              color: appContainerColor,
+              color: myContainerColor,
               elevation: 5,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),

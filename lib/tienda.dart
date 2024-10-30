@@ -38,7 +38,7 @@ class TiendaPage extends StatelessWidget {
           itemBuilder: (context, index) {
             final product = products[index];
             return Card(
-              color: appContainerColor,
+              color: myContainerColor,
               elevation: 5,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
@@ -75,7 +75,7 @@ class TiendaPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: appButtonColor),
+                        backgroundColor: myButtonColor),
                     onPressed: () {
                       // Lógica para agregar al carrito
                       ScaffoldMessenger.of(context).showSnackBar(

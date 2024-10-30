@@ -11,7 +11,7 @@ class PerfilPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Perfil de Usuario'),
-        backgroundColor: appTopBarColor,
+        backgroundColor: myTopBarColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -24,7 +24,7 @@ class PerfilPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Card(
-              color: appContainerColor,
+              color: myContainerColor,
               elevation: 4,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12.0),
@@ -69,7 +69,7 @@ class PerfilPage extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: appButtonColor,
+                    backgroundColor: myButtonColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
